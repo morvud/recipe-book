@@ -1,0 +1,32 @@
+<% include partials/header %>
+<div class="ui centered card" style="margin-top: 120px; text-align: center">
+    <div class='content'>
+        <form class ="ui form" action="/recipes" method="POST">
+            <div class="field">
+                <label>Name: </label>
+                <input type='text' name='name' placeholder='name'><br>
+            </div>
+            <div class="field">
+                <label>Method: </label>
+                <input type='text' name='method' placeholder='method'><br>
+            </div>
+            <div class="field">
+                <label>Protein: </label>
+                <input type='number' name='protein' placeholder='protein'><br>
+            </div>
+            <div class="field">
+                <label>Carbs: </label>
+                <input type='number' name='carbs' placeholder='carbs'><br>
+            </div>
+            <div class="field">
+                <label>Fats: </label>
+                <input type='number' name='fats' placeholder='fats'><br>
+            </div>
+            <button class="ui button" type="submit">Create</button>
+            
+        </form>
+    </div>
+    <a href="/recipes" class="ui bottom attached button">Back</a>
+</div>
+
+<% include partials/footer %>

@@ -1,0 +1,17 @@
+<% include partials/header %>
+<div class="ui centered card" style="margin-top: 120px; text-align: center">
+    <div class='content'>
+        <form class ="ui form" action='register' method='POST'>
+            <div class="field">
+                <label>Username: </label>
+                <input type='text' name='username' placeholder='username'><br>
+            </div>
+            <div class="field">
+                <label>Password: </label>
+                <input type='password' name='password' placeholder='password'><br>
+            </div>
+            <button class="ui button" type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
+<% include partials/footer %>

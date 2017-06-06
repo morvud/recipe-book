@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>RecipeBook</title>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css">
+        <style>
+            i.icon {
+                font-size: 2em;
+            }
+        </style>
+    </head>
+    <body>
+    <div class="ui fixed inverted menu">
+        <div class="header item">
+            <i class="book icon"></i>
+            <a href="/recipes">RecipeBook</a> 
+        </div>
+        
+        <div class="right menu">
+            <% if(!currentUser){ %>
+                <a class="active item" href='/login'>
+                  Login
+                </a>
+                <a class="item" href='/register'>
+                    Sign Up
+                </a>
+            <% } else { %>
+                <a class="item" href="#">
+                    <%=currentUser.username%>
+                </a>
+                <a class="item" href='/logout'>
+                    Logout
+                </a>
+            <% } %>
+        </div>
+    </div>
+    
+    <h1 style="margin-top: 90px"><%=message%></h1>
+

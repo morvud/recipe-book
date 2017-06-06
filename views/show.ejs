@@ -1,0 +1,39 @@
+<% include partials/header %>
+<div class="ui centered card" style="margin-top: 90px">
+    <div class="content">
+        <div class="header">
+            <%= recipe.name %>
+        </div>
+        <div class="item">
+            <%= recipe.method %>
+        </div>
+        <div class="item">
+            <%= recipe.macros.protein %>
+        </div>
+        <div class="item">
+            <%= recipe.macros.carbs %>
+        </div>
+        <div class="item">
+            <%= recipe.macros.fats %>
+        </div>
+    </div>
+    <div class="extra content">
+        <div class="item">
+            Author: <%= recipe.author.username %>
+        </div>
+    </div>
+    <% if(currentUser && recipe.author.id.equals(currentUser._id)){ %>
+        <div class="two ui buttons">
+            <a class="ui button" href="/recipes/<%= recipe._id%>/edit">
+                Edit
+            </a>
+            <form action='/recipes/<%=recipe._id%>?_method=DELETE' method='POST'>
+                <button class="ui button">
+                    Remove
+                </button>
+            </form>
+        </div>
+    <% } %>
+
+</div>
+<% include partials/footer %>

@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+<div class="ui container">
+    <div class="ui container" style="text-align: center; margin-bottom: 60px; margin-top: 60px">
+        <h1>This is recipes page</h1>
+        <a class="ui basic blue button" href="/recipes/new">Create a new recipe</a>
+    </div>
+    <div class="ui cards">
+        <% recipes.forEach((recipes) => { %>
+            <div class="ui card">
+                <div class="content">
+                    <div class="header">Name: <%= recipes.name %><br/></div>
+                    <div class="description">
+                        Protein: <%= recipes.macros.protein %><br/>
+                        Carbs: <%= recipes.macros.carbs %><br/>
+                        Fats: <%= recipes.macros.fats %><br/>
+                    </div>
+                    </h4>
+                </div>
+                <a href="/recipes/<%= recipes._id%>" class="ui bottom attached button">More info</a>
+            </div>
+        <% }); %>
+    </div>
+</div>
+<% include partials/footer %>
